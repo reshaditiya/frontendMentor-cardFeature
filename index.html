@@ -1,45 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<title>Frontend Mentor | Four card feature section</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Four card feature section</title>
+		<!-- FONT -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+			rel="stylesheet"
+		/>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  
-  Reliable, efficient delivery
-  Powered by Technology
+		<!-- STYLE -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/attributify.global.js"></script>
+		<script>
+			const config = window.__unocss_runtime.uno.config
+			const configColor = config.theme.colors
+			const configFamily = config.theme.fontFamily
 
-  Our Artificial Intelligence powered tools use millions of project data points 
-  to ensure that your project is successful
-
-  Supervisor
-  Monitors activity to identify project roadblocks
-
-  Team Builder
-  Scans our talent network to create the optimal team for your project
-
-  Karma
-  Regularly evaluates our talent to ensure quality
-
-  Calculator
-  Uses data from past projects to provide better delivery estimates
-
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+			configColor.primaryRed = "#ea5353"
+			configColor.primaryCyan = "#45d3d3"
+			configColor.primaryOrange = "#fcaf4a"
+			configColor.primaryBlue = "#549ef2"
+			configColor.darkBlue = "#4c4e61"
+			configColor.grayBlue = "#a3a5ae"
+			configColor.lightGray = "#fafafa"
+			configFamily.poppins = '"Poppins",' + configFamily.sans
+		</script>
+		<style>
+			[un-cloak] {
+				display: none;
+			}
+		</style>
+	</head>
+	<body class="font-poppins" un-cloak>
+		<h1>
+			<span>Reliable, efficient delivery</span>
+			<span>Powered by Technology</span>
+		</h1>
+		<p>
+			Our Artificial Intelligence powered tools use millions of project
+			data points to ensure that your project is successful
+		</p>
+		<div>
+			<h2>Supervisor</h2>
+			<p>Monitors activity to identify project roadblocks</p>
+		</div>
+		<div>
+			<h2>Team Builder</h2>
+			<p>
+				Scans our talent network to create the optimal team for your
+				project
+			</p>
+		</div>
+		<div>
+			<h2>Karma</h2>
+			<p>Regularly evaluates our talent to ensure quality</p>
+		</div>
+		<div>
+			<h2>Calculator</h2>
+			<p>
+				Uses data from past projects to provide better delivery
+				estimates
+			</p>
+		</div>
+	</body>
 </html>
