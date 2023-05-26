@@ -34,48 +34,105 @@
 			configColor.primaryCyan = "#45d3d3"
 			configColor.primaryOrange = "#fcaf4a"
 			configColor.primaryBlue = "#549ef2"
-			configColor.darkBlue = "#4c4e61"
-			configColor.grayBlue = "#a3a5ae"
-			configColor.lightGray = "#fafafa"
-			configFamily.poppins = '"Poppins",' + configFamily.sans
+			configColor.neutralDarkBlue = "#4c4e61"
+			configColor.neutralGrayBlue = "#a3a5ae"
+			configColor.neutralLightGray = "#fafafa"
+			configFamily.poppins = "Poppins," + configFamily.sans
 		</script>
 		<style>
 			[un-cloak] {
 				display: none;
 			}
 		</style>
+
+		<!-- JS -->
+		<script src="//unpkg.com/alpinejs" defer></script>
+		<script>
+			document.addEventListener("alpine:init", () => {
+				Alpine.data("cardFeature", () => ({
+					shortcuts: {
+						featureContainer: "",
+					},
+					features: [
+						{
+							id: "supervisor",
+							title: "Supervisor",
+							description:
+								"Monitors activity to identify project roadblocks",
+							class: { borderTop: "bg-primary-cyan" },
+							icon: "images/icon-supervisor.svg",
+						},
+						{
+							id: "teamBuilder",
+							title: "Team Builder",
+							description:
+								"Scans our talent network to create the optimal team for your project",
+							class: { borderTop: "bg-primary-red" },
+							icon: "images/icon-team-builder.svg",
+						},
+						{
+							id: "karma",
+							title: "Karma",
+							description:
+								"Regularly evaluates our talent to ensure quality",
+							class: { borderTop: "bg-primary-orange" },
+							icon: "images/icon-karma.svg",
+						},
+						{
+							id: "calculator",
+							title: "Calculator",
+							description:
+								"Uses data from past projects to provide better delivery estimates",
+							class: { borderTop: "bg-primary-blue" },
+							icon: "images/icon-calculator.svg",
+						},
+					],
+				}))
+			})
+		</script>
 	</head>
-	<body class="font-poppins" un-cloak>
-		<section>
-			<h1>
-				<span>Reliable, efficient delivery</span>
-				<span>Powered by Technology</span>
+	<body
+		class="font-poppins text-neutral-gray-blue bg-neutral-light-gray bg-very-cool"
+		un-cloak
+	>
+		<section x-data="cardFeature" class="px-8 py-21">
+			<h1 class="flex flex-col text-6 text-center text-neutral-dark-blue">
+				<span class="font-200 tracking-0.02"
+					>Reliable, efficient delivery</span
+				>
+				<span class="font-600 tracking-0.04"
+					>Powered by Technology</span
+				>
 			</h1>
-			<p>
+			<p class="mt-4 text-3.75 leading-6.25 text-center">
 				Our Artificial Intelligence powered tools use millions of
 				project data points to ensure that your project is successful
 			</p>
-			<div>
-				<h2>Supervisor</h2>
-				<p>Monitors activity to identify project roadblocks</p>
-			</div>
-			<div>
-				<h2>Team Builder</h2>
-				<p>
-					Scans our talent network to create the optimal team for your
-					project
-				</p>
-			</div>
-			<div>
-				<h2>Karma</h2>
-				<p>Regularly evaluates our talent to ensure quality</p>
-			</div>
-			<div>
-				<h2>Calculator</h2>
-				<p>
-					Uses data from past projects to provide better delivery
-					estimates
-				</p>
+			<div class="flex flex-col gap-6.5 mt-18.75">
+				<template x-for="feature in features">
+					<div
+						class="relative flex flex-col items-strecth h-55 gap-0.75 px-7.25 pt-6.5 rounded-2 bg-white shadow-xl shadow-[#d9e0ea] overflow-hidden"
+					>
+						<hr
+							class="absolute w-full inset-0 h-1"
+							:class="feature.class.borderTop"
+						/>
+						<h2
+							class="text-5 font-600"
+							x-text="feature.title"
+							text-neutral-dark-blue
+						></h2>
+						<p
+							class="text-3.25 tracking-0.03 leading-5.75"
+							x-text="feature.description"
+						></p>
+						<img
+							:src="feature.icon"
+							alt=""
+							class="absolute h-14 bottom-6.5 right-7"
+						/>
+					</div>
+				</template>
 			</div>
 		</section>
 	</body>
