@@ -46,7 +46,10 @@
 		</style>
 
 		<!-- JS -->
-		<script src="//unpkg.com/alpinejs" defer></script>
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+		></script>
 		<script>
 			document.addEventListener("alpine:init", () => {
 				Alpine.data("cardFeature", () => ({
@@ -59,7 +62,10 @@
 							title: "Supervisor",
 							description:
 								"Monitors activity to identify project roadblocks",
-							class: { borderTop: "bg-primary-cyan" },
+							class: {
+								borderTop: "bg-primary-cyan",
+								mdPosition: "md:top-112.5 md:left-21.5",
+							},
 							icon: "images/icon-supervisor.svg",
 						},
 						{
@@ -67,7 +73,10 @@
 							title: "Team Builder",
 							description:
 								"Scans our talent network to create the optimal team for your project",
-							class: { borderTop: "bg-primary-red" },
+							class: {
+								borderTop: "bg-primary-red",
+								mdPosition: "md:top-77.5 md:left-116.75",
+							},
 							icon: "images/icon-team-builder.svg",
 						},
 						{
@@ -75,7 +84,10 @@
 							title: "Karma",
 							description:
 								"Regularly evaluates our talent to ensure quality",
-							class: { borderTop: "bg-primary-orange" },
+							class: {
+								borderTop: "bg-primary-orange",
+								mdPosition: "md:top-147.5 md:right-116",
+							},
 							icon: "images/icon-karma.svg",
 						},
 						{
@@ -83,7 +95,10 @@
 							title: "Calculator",
 							description:
 								"Uses data from past projects to provide better delivery estimates",
-							class: { borderTop: "bg-primary-blue" },
+							class: {
+								borderTop: "bg-primary-blue",
+								mdPosition: "md:top-112.5 md:right-21",
+							},
 							icon: "images/icon-calculator.svg",
 						},
 					],
@@ -95,23 +110,34 @@
 		class="font-poppins text-neutral-gray-blue bg-neutral-light-gray bg-very-cool"
 		un-cloak
 	>
-		<section x-data="cardFeature" class="px-8 py-21">
-			<h1 class="flex flex-col text-6 text-center text-neutral-dark-blue">
-				<span class="font-200 tracking-0.02"
+		<section
+			x-data="cardFeature"
+			class="relative px-8 py-21 max-w-320 h-240"
+			md="py-19.5 mx-auto"
+		>
+			<h1
+				class="flex flex-col text-6 text-center text-neutral-dark-blue"
+				md="text-9.25 leading-13 transition-all"
+			>
+				<span class="font-200 tracking-0.02" md="-tracking-0.05"
 					>Reliable, efficient delivery</span
 				>
-				<span class="font-600 tracking-0.04"
+				<span class="font-600 tracking-0.04" md="-tracking-0.1"
 					>Powered by Technology</span
 				>
 			</h1>
-			<p class="mt-4 text-3.75 leading-6.25 text-center">
+			<p
+				class="mt-4 text-3.75 leading-6.25 text-center max-w-130 mx-auto"
+			>
 				Our Artificial Intelligence powered tools use millions of
 				project data points to ensure that your project is successful
 			</p>
 			<div class="flex flex-col gap-6.5 mt-18.75">
 				<template x-for="feature in features">
 					<div
-						class="relative flex flex-col items-strecth h-55 gap-0.75 px-7.25 pt-6.5 rounded-2 bg-white shadow-xl shadow-[#d9e0ea] overflow-hidden"
+						class="relative flex flex-col items-strecth h-55 gap-0.75 px-7.25 pt-6.5 rounded-2 bg-white shadow-xl shadow-[#d9e0ea] overflow-hidden transition-all"
+						md="absolute w-87.5 h-62.75 p-8 gap-2"
+						:class="feature.class.mdPosition"
 					>
 						<hr
 							class="absolute w-full inset-0 h-1"
@@ -130,6 +156,7 @@
 							:src="feature.icon"
 							alt=""
 							class="absolute h-14 bottom-6.5 right-7"
+							md="right-8 bottom-8 h-16"
 						/>
 					</div>
 				</template>
